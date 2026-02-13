@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: set-up-upgrade-health-checker.html 
+keywords: upgrade, health, checker, set up, download 
+summary: 'È possibile scaricare Upgrade Health Checker per generare report completi in loco prima di eseguire l"aggiornamento a una versione più recente di ONTAP.' 
+---
+= Scarica e configura Upgrade Health Checker
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile scaricare Upgrade Health Checker per generare report completi in loco prima di eseguire l'aggiornamento a una versione più recente di ONTAP.
+
+.Prima di iniziare
+Configura una macchina virtuale per Upgrade Health Checker con le seguenti specifiche:
+
+* Elaborazione e memoria: m5.large VM o equivalente con 2 vCPU e 8 GiB RAM.
+* Sistema operativo consigliato: Ubuntu 22.04 per compatibilità ottimale.
+* Archiviazione: fornire un volume root con un minimo di 100 GB e un volume NFS aggiuntivo di almeno 100 GB per garantire la conservazione dei dati in caso di compromissione della macchina virtuale.
+* Requisiti di hosting: posizionare la VM in una posizione con connettività al cluster e accesso a Internet per consentire gli aggiornamenti automatici degli strumenti. La macchina deve avere accesso ai seguenti endpoint tramite HTTPS per eseguire gli aggiornamenti automatici:
++
+** https://api.uhc.netapp.com[]
+** https://gql.aiq.netapp.com[]
++
+Se l'accesso a Internet non è disponibile, consultare NetApp per ricevere indicazioni.
+
+
+
+* Pacchetti consigliati: installa un server web per facilitare l'accesso.
+
+
+Inoltre, assicurati che la macchina virtuale possa connettersi all'endpoint di telemetria (https://support.netapp.com/[] tramite HTTPS per consentire a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento.
+
+.Passaggi
+. Scarica il file binario Upgrade Health Checker link:https://console.netapp.com/automationHub["navigazione verso l'NetApp Console Automation Hub"] e trova il riquadro Upgrade Health Checker.
+. Configura la macchina virtuale Upgrade Health Checker e usa SSH per posizionare il binario nella posizione di tua scelta.
+. Verificare la firma digitale di Upgrade Health Checker.
++
+Upgrade Health Checker ha un certificato di firma del codice pubblico (`UHC-Linux-codesigning-certificate-public.pem`) e una catena di certificati intermedi e radice (`UHC-Linux-chain-certificates-public.pem`).
+
++
+.. (Facoltativo) Verificare il certificato di firma del codice rispetto alla catena:
++
+[listing]
+----
+openssl verify -CAfile UHC-Linux-chain-certificates-public.pem UHC-Linux-codesigning-certificate-public.pem
+----
++
+Un output di  `OK` conferma una catena di fiducia valida.
+
+.. Estrai la chiave pubblica dal certificato di firma del codice:
++
+[listing]
+----
+openssl x509 -in UHC-Linux-codesigning-certificate-public.pem -pubkey -noout -out UHC-Linux-public.pub
+----
+.. Verificare il file di firma (`uhc.sig` rispetto al binario Upgrade Health Checker utilizzando la chiave pubblica:
++
+[listing]
+----
+openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
+----
++
+Un output di  `Verified OK` conferma che la firma è valida.
+
+
+
+. Configura un account di servizio e un ruolo per l'accesso al cluster ONTAP. Per l'accesso al cluster tramite Upgrade Health Checker, crea il ruolo di servizio come REST-role.
++
+
+NOTE: È possibile creare un playbook Ansible per automatizzare la distribuzione del ruolo e dell'utente su tutti i cluster ONTAP.
+
++
+È necessario creare l'account di servizio per l'applicazione http. Utilizzare i seguenti comandi CLI per configurare le autorizzazioni necessarie:
+
++
+[source, cli]
+----
+security login rest-role create -role uhctool -api /api -access readonly -vserver
+
+security login rest-role create -role uhctool -api /api/support/autosupport -access read_create_modify -vserver
+
+security login rest-role create -role uhctool -api /api/support/autosupport/messages -access read_create_modify -vserver
+
+vserver services web access create -name spi -role uhctool -vserver
+
+security login create -user-or-group-name uhctool -role uhctool -application http -authentication-method password
+
+security login create -user-or-group-name uhctool -role uhctool -application ssh -authentication-method password
+----
+. Imposta la gestione delle credenziali per proteggere l'accesso all'applicazione.
++
+Ad esempio, se disponi di CyberArk e Conjur, puoi configurare il tuo ambiente in modo da evitare di passare le credenziali tramite un file yaml o una riga di comando.
+
++
+.. Crea le casseforti CyberArk richieste:
++
+... Crea una cassaforte (Main-Conjur-Safe) che contiene le credenziali e i segreti dell'applicazione
+... Crea una Safe (API-Credentials-Safe) che contiene il Conjur Host ID e l'API Key
+... Crea una Safe (Conjur-SSL-Certificate) che contenga il certificato necessario
+
+
+.. Crea i file di configurazione (Conjur.conf) e di identità (Conjur.identity) per questa applicazione:
++
+... Conjur.conf
++
+[listing]
+----
+account:
+plugins:[]
+appliance_url: https://FQDN
+cert_file: /etc/conjur.pem
+----
+... Conjur.identity
++
+[listing]
+----
+machine https://FQDN/authn
+login host /prodvault/devops/<Main-Conjur-Safe>/host1
+password XXXXXX
+----
+
+
+
+
++
+Ecco un esempio di come utilizzare CyberArk e Conjur in un playbook Ansible:
+
++
+.. Installa Conjur Ansible Collection, che include il Conjur Ansible Lookup Plugin, su Ansible Host:
++
+[listing]
+----
+ansible-galaxy collection install cyberark.conjur
+----
+.. Crea un'attività in un file yaml per recuperare il nome utente e la password da CyberArk:
++
+[listing]
+----
+conjur_username: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops/<Main-Conjur-Safe>/<Account name>/username', validate_certs=false) }}"
+conjur_password: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops/<Main-Conjur-Safe>/<Account name>/password', validate_certs=false) }}"
+----
+
+
+
+
+.E ora?
+È possibile utilizzare Upgrade Health Checker per aiutarti a pianificare un aggiornamento di ONTAP link:generate-report-upgrade-health-checker.html["generazione di un report di aggiornamento"].

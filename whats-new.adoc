@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: upgrade, health, checker, whats new, release, notes 
+summary: Scopri le novità di questo sito di documentazione. 
+---
+= Novità in Upgrade Health Checker
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Scopri le novità di Upgrade Health Checker. Puoi trovare ulteriori informazioni sui miglioramenti accedendo al riquadro Upgrade Health Checker nella link:https://console.netapp.com/automationHub["Hub di automazione NetApp Console"^] e visualizzando gli ultimi file di download di Upgrade Health Checker.
+
+
+
+== 12 febbraio 2026
+
+Upgrade Health Checker offre una nuova soluzione per generare report completi e in loco, per consentire di completare con successo un aggiornamento ONTAP. Può essere utilizzato con i framework di automazione e orchestrazione esistenti per migliorare l'efficienza durante l'aggiornamento di uno o più cluster. Upgrade Health Checker supporta gli aggiornamenti a ONTAP 9.11.1 e versioni successive.
+
+link:learn-about-upgrade-health-checker.html["Scopri di più su Upgrade Health Checker"].
