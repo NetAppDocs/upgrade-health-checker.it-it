@@ -15,11 +15,20 @@ summary: 'È possibile scaricare Upgrade Health Checker per generare report comp
 [role="lead"]
 È possibile scaricare Upgrade Health Checker per generare report completi in loco prima di eseguire l'aggiornamento a una versione più recente di ONTAP.
 
+.Informazioni su questa attività
+Upgrade Health Checker supporta gli aggiornamenti per le versioni ONTAP on-premises 9.11.1 e successive. Se si utilizza Cloud Volumes ONTAP, consultare link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["Aggiorna Cloud Volumes ONTAP"] per informazioni sull'aggiornamento del sistema.
+
 .Prima di iniziare
 Configura una macchina virtuale per Upgrade Health Checker con le seguenti specifiche:
 
 * Elaborazione e memoria: m5.large VM o equivalente con 2 vCPU e 8 GiB RAM.
-* Sistema operativo consigliato: Ubuntu 22.04 per compatibilità ottimale.
+* Sistema operativo consigliato: qualsiasi sistema operativo Linux con libreria glibc versione 2.28 o superiore per una compatibilità ottimale. Ciò include:
++
+** Ubuntu 22.04
+** RHEL8
+** RHEL9
+
+
 * Archiviazione: fornire un volume root con un minimo di 100 GB e un volume NFS aggiuntivo di almeno 100 GB per garantire la conservazione dei dati in caso di compromissione della macchina virtuale.
 * Requisiti di hosting: posizionare la VM in una posizione con connettività al cluster e accesso a Internet per consentire gli aggiornamenti automatici degli strumenti. La macchina deve avere accesso ai seguenti endpoint tramite HTTPS per eseguire gli aggiornamenti automatici:
 +
@@ -92,7 +101,7 @@ security login create -user-or-group-name uhctool -role uhctool -application htt
 
 security login create -user-or-group-name uhctool -role uhctool -application ssh -authentication-method password
 ----
-. Imposta la gestione delle credenziali per proteggere l'accesso all'applicazione.
+. (Facoltativo) Configura la gestione delle credenziali per proteggere l'accesso all'applicazione.
 +
 Ad esempio, se disponi di CyberArk e Conjur, puoi configurare il tuo ambiente in modo da evitare di passare le credenziali tramite un file yaml o una riga di comando.
 
