@@ -45,8 +45,8 @@ Il controllo completo garantisce che la macchina virtuale che ospita Upgrade Hea
 
 +
 ** Connettività all'indirizzo IP del cluster ONTAP tramite HTTPS
-** Connettività all'endpoint di telemetria (https://support.netapp.com/[] tramite HTTPS
-** Connettività agli endpoint di aggiornamento automatico (https://api.uhc.netapp.com[] e  https://gql.aiq.netapp.com[]) tramite HTTPS
+** Connettività all'endpoint di telemetria (https://support.netapp.com/[] e  https://api.activeiq.netapp.com[]) tramite HTTPS
+** Connettività agli endpoint di aggiornamento automatico (https://api.uhc.netapp.com[], https://gql.aiq.netapp.com[], e https://api.activeiq.netapp.com[]) tramite HTTPS (443)
 ** Almeno 4 GB di spazio `/tmp` disponibile
 
 
@@ -95,13 +95,15 @@ La Guida ai Parametri di Input fornisce anche informazioni su come specificare u
 
 NOTE: Ogni esecuzione del programma è una "esecuzione unica" e avrà tutti i dati, i registri e i risultati associati nella cartella  `runs` associata.
 
-. Aprire il file del report (denominato `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`) in un browser web per visualizzare il report. Se lo si esegue su un host remoto, prima scaricare il file del report su un computer dove è possibile visualizzare il report in un browser web.
+. Apri il file di report (denominato  `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`) in un browser web, Microsoft Excel o un visualizzatore JSON per visualizzare il report. Se lo esegui su un host remoto, scarica prima il file di report su un computer in cui puoi visualizzare il report in un browser web, in Excel o in un visualizzatore JSON.
 +
 Il percorso del registro e il percorso del report sono i seguenti:
 
 +
 ** Percorso del registro: `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** Percorso report: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Percorso del report HTML: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Percorso del report Excel: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** Percorso del report JSON: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 

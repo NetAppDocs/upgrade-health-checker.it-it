@@ -58,13 +58,15 @@ Processo cron:
 
 NOTE: Ogni esecuzione del programma è un'esecuzione unica e avrà tutti i dati, i log e i risultati associati nella cartella associata  `runs`.
 
-. Aprire il file del report (denominato `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`) in un browser web per visualizzare il report. Se si esegue Upgrade Health Checker su un host remoto, scaricare prima il file del report su un computer dove è possibile visualizzarlo in un browser web.
+. Apri il file di report (denominato  `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`) in un browser web, Microsoft Excel o un visualizzatore JSON per visualizzare il report. Se esegui Upgrade Health Checker su un host remoto, scarica prima il file di report su un computer in cui puoi visualizzare il report in un browser web, in Excel o in un visualizzatore JSON.
 +
 Il percorso del registro e il percorso del report sono i seguenti:
 
 +
 ** Percorso del registro: `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** Percorso report: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Percorso del report HTML: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Percorso del report Excel: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** Percorso del report JSON: `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 

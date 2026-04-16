@@ -30,10 +30,11 @@ Configura una macchina virtuale per Upgrade Health Checker con le seguenti speci
 
 
 * Archiviazione: fornire un volume root con un minimo di 100 GB e un volume NFS aggiuntivo di almeno 100 GB per garantire la conservazione dei dati in caso di compromissione della macchina virtuale.
-* Requisiti di hosting: posizionare la VM in una posizione con connettività al cluster e accesso a Internet per consentire gli aggiornamenti automatici degli strumenti. La macchina deve avere accesso ai seguenti endpoint tramite HTTPS per eseguire gli aggiornamenti automatici:
+* Requisiti di hosting: Posizionare la VM in una posizione con connettività al cluster e accesso a Internet per consentire gli aggiornamenti automatici degli strumenti. La macchina deve avere accesso ai seguenti endpoint tramite HTTPS (443) per eseguire gli aggiornamenti automatici:
 +
 ** https://api.uhc.netapp.com[]
 ** https://gql.aiq.netapp.com[]
+** https://api.activeiq.netapp.com[]
 +
 Se l'accesso a Internet non è disponibile, consultare NetApp per ricevere indicazioni.
 
@@ -42,7 +43,7 @@ Se l'accesso a Internet non è disponibile, consultare NetApp per ricevere indic
 * Pacchetti consigliati: installa un server web per facilitare l'accesso.
 
 
-Inoltre, assicurati che la macchina virtuale possa connettersi all'endpoint di telemetria (https://support.netapp.com/[] tramite HTTPS per consentire a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento.
+Inoltre, assicurati che la macchina virtuale possa connettersi all'endpoint di telemetria (https://support.netapp.com/[] e  https://api.activeiq.netapp.com[] tramite HTTPS per consentire a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento.
 
 .Passaggi
 . Scarica il file binario Upgrade Health Checker link:https://console.netapp.com/automationHub["navigazione verso l'NetApp Console Automation Hub"] e trova il riquadro Upgrade Health Checker.
