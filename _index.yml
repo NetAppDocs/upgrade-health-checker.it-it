@@ -23,5 +23,7 @@ indexpage:
     links:
     - title: Scopri i parametri di input per Upgrade Health Checker
       url: upgrade-health-checker-input-parameters.html
+    - title: Guida introduttiva a Upgrade Health Checker tramite NetApp Lab on Demand
+      url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Getting-Started-with-Upgrade-Health-Checker-Using-NetApp-Lab-on-Demand/ba-p/466818
     - title: FAQ per Upgrade Health Checker
       url: faq-upgrade-health-checker.html
