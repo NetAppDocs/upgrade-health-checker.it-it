@@ -45,8 +45,8 @@ Il controllo completo garantisce che la macchina virtuale che ospita Upgrade Hea
 
 +
 ** Connettività all'indirizzo IP del cluster ONTAP tramite HTTPS
-** Connettività all'endpoint di telemetria (https://support.netapp.com/[] e  https://api.activeiq.netapp.com[]) tramite HTTPS
-** Connettività agli endpoint di aggiornamento automatico (https://api.uhc.netapp.com[], https://gql.aiq.netapp.com[], e https://api.activeiq.netapp.com[]) tramite HTTPS (443)
+** Connettività all'endpoint di telemetria (+https://support.netapp.com/+ e +https://api.activeiq.netapp.com+) tramite HTTPS
+** Connettività agli endpoint di aggiornamento automatico (+https://api.uhc.netapp.com+, +https://gql.aiq.netapp.com+, e +https://api.activeiq.netapp.com+) tramite HTTPS (443)
 ** Almeno 4 GB di spazio `/tmp` disponibile
 
 
