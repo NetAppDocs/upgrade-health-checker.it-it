@@ -95,6 +95,10 @@ La Guida ai Parametri di Input fornisce anche informazioni su come specificare u
 
 NOTE: Ogni esecuzione del programma è una "esecuzione unica" e avrà tutti i dati, i registri e i risultati associati nella cartella  `runs` associata.
 
+. Elenca i file di report generati:
++
+`ls -lrt`
+
 . Apri il file di report (denominato  `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`) in un browser web, Microsoft Excel o un visualizzatore JSON per visualizzare il report. Se lo esegui su un host remoto, scarica prima il file di report su un computer in cui puoi visualizzare il report in un browser web, in Excel o in un visualizzatore JSON.
 +
 Il percorso del registro e il percorso del report sono i seguenti:
@@ -107,3 +111,6 @@ Il percorso del registro e il percorso del report sono i seguenti:
 
 
 
+
+.Cosa c'è dopo
+Dopo aver generato il piano di aggiornamento e il report del cluster, è possibile visualizzare il link:dashboard-upgrade-health-checker.html["Aggiorna la dashboard di Health Checker"] per dettagli sullo stato di salute dei cluster valutati durante l'esecuzione.

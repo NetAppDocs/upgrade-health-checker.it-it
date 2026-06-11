@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: maintain-upgrade-health-checker.html 
+keywords: upgrade, health, checker, maintain, maintenance tasks, 
+summary: Attività di manutenzione per Upgrade Health Checker. 
+---
+= Mantieni lo strumento di verifica dello stato di aggiornamento
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mantieni Upgrade Health Checker attivo verificando regolarmente la presenza di aggiornamenti, monitorando i log per individuare eventuali problemi ricorrenti e assicurandoti che lo strumento sia configurato correttamente per il tuo ambiente. Questo garantisce un funzionamento affidabile ed efficiente dello strumento. In caso di nuovi problemi o se necessiti di ulteriore assistenza, consulta le risorse di supporto NetApp o contatta l'assistenza NetApp.
+
+
+
+== gestione dello spazio /tmp
+
+Upgrade Health Checker estrae i suoi componenti nella `/tmp` directory durante l'esecuzione. Se riscontri problemi relativi a spazio insufficiente in `/tmp`, considera quanto segue:
+
+* Verifica lo spazio disponibile in  `/tmp`, assicurandoti che ci siano almeno 4 GB di spazio libero affinché lo strumento funzioni correttamente.
+* Rimuovi tutti i file non necessari da `/tmp` per liberare spazio.
+
+
+
+
+== Eseguire la pulizia della directory
+
+Upgrade Health Checker crea una directory di esecuzione univoca per ogni esecuzione, che contiene i log e i risultati. Per gestire lo spazio su disco, configura un processo di pulizia automatico per rimuovere le directory di esecuzione obsolete dopo un certo periodo, ad esempio 30 giorni.
+
+[listing]
+----
+# Delete UHC data older than 30 days (recommended for automated workflows)
+find /mnt/nfs/uhc/runs -type d -mtime +30 -exec rm -rf {} + 2>/dev/null
+
+# Schedule as a weekly cron job
+0 3 * * 0 find /mnt/nfs/uhc/runs -type d -mtime +30 -exec rm -rf {} + 2>/dev/null
+----
+
+
+== Aggiornamenti automatici
+
+Upgrade Health Checker verifica automaticamente la presenza di aggiornamenti dopo ogni esecuzione, quando è disponibile una connessione a Internet. Questo garantisce di avere sempre le funzionalità, i miglioramenti e le correzioni di bug più recenti. In assenza di connessione a Internet, è possibile scaricare manualmente la versione più recente da link:https://console.netapp.com/automationHub["Hub di automazione NetApp Console"^].
+
+Per disabilitare gli aggiornamenti automatici, aggiungi quanto segue al  `config.yaml` file:
+
+[listing]
+----
+AUTO_UPDATE:
+  ENABLED: false
+----

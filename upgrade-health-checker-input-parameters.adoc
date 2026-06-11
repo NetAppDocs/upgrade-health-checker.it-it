@@ -300,6 +300,29 @@ CLUSTER:
 ====
 
 
+=== Pannello di controllo
+
+Il  `--dashboard` parametro rigenera la dashboard dalle esecuzioni esistenti a  `<runs>/dashboard/index.html` senza contattare un cluster. Lo si utilizza per aggiornare la visualizzazione della flotta al di fuori di un'esecuzione normale. La dashboard fornisce una panoramica high-level dello stato di salute di tutti i cluster valutati di recente, consentendo di monitorare e confrontare facilmente la prontezza all'aggiornamento di più cluster in un unico luogo. È possibile aprire la dashboard in un browser web per visualizzare lo stato di salute, i potenziali ostacoli e i rischi per ciascun cluster a colpo d'occhio.
+
+* Argomento CLI: `--dashboard`
+
+
+.Esempi
+[%collapsible]
+====
+* Argomento CLI:
++
+[listing]
+----
+./uhc --dashboard
+./uhc --dashboard --runs-path /custom/output
+./uhc --dashboard --config-path /path/to/custom_config.yaml
+----
+
+
+====
+
+
 === Disabilita la telemetria
 
 Per disattivare la telemetria, aggiungi quanto segue al tuo  `config.yaml` file:
