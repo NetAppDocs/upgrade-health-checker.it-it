@@ -17,12 +17,14 @@ Scopri come risolvere i problemi più comuni di Upgrade Health Checker e corregg
 
 
 
+[[troubleshoot-issues]]
 == Risoluzione dei problemi
 
 {empty} + {empty}
 
 
 
+[[issue-authentication-or-credential-errors]]
 === Problema: errori di autenticazione o di credenziali
 
 *Sintomi:*
@@ -50,6 +52,7 @@ Questi errori indicano che Upgrade Health Checker non riesce ad autenticarsi con
 
 
 
+[[issue-auto-update-fails]]
 === Problema: l'aggiornamento automatico non riesce
 
 *Sintomi:*
@@ -81,6 +84,7 @@ df -h <location of uhc>
 
 
 
+[[issue-binary-takes-a-long-time-to-start]]
 === Problema: l'avvio del binario richiede molto tempo
 
 *Causa:* Il file binario è autonomo e deve decomprimersi prima dell'esecuzione.
@@ -89,6 +93,7 @@ df -h <location of uhc>
 
 
 
+[[issue-permission-denied-or-cannot-execute-binary-on-tmp]]
 === Problema: "Permesso negato" o "Impossibile eseguire il binario" su /tmp
 
 *Sintomi:*
@@ -139,6 +144,7 @@ NOTE: Il percorso personalizzato deve prima esistere affinché questa soluzione 
 
 
 
+[[issue-connection-timeout]]
 === Problema: timeout di connessione
 
 *Sintomi:*
@@ -157,6 +163,7 @@ Request timeout
 
 
 
+[[issue-insufficient-disk-space]]
 === Problema: spazio su disco insufficiente
 
 *Sintomi:*
@@ -196,6 +203,7 @@ rm -rf /tmp/_MEI*
 
 
 
+[[issue-invalid-runs-path]]
 === Problema: percorso di esecuzione non valido
 
 *Sintomi:*
@@ -215,6 +223,7 @@ Cannot create tarball: basepath_runs '<path>' does not exist
 
 
 
+[[issue-invalid-target-ontap-version]]
 === Problema: versione di ONTAP non valida
 
 *Sintomi:*
@@ -234,6 +243,7 @@ Downgrade is not supported. Target version must be greater than or equal to the 
 
 
 
+[[issue-signature-verification-fails]]
 === Problema: la verifica della firma non riesce
 
 *Sintomi:*
@@ -261,6 +271,7 @@ openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
 
 
 
+[[issue-telemetry-upload-failure]]
 === Problema: Errore nel caricamento dei dati di telemetria
 
 *Sintomi:*
@@ -283,6 +294,7 @@ Telemetry endpoint is not reachable
 
 
 
+[[issue-update-in-progress-lock-file]]
 === Problema: file di blocco "AGGIORNAMENTO IN CORSO"
 
 *Sintomi:*

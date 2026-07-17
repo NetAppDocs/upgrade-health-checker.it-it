@@ -13,11 +13,14 @@ summary: È possibile configurare le email per ricevere i report di Upgrade Heal
 
 
 [role="lead"]
-È possibile integrare le email in Upgrade Health Checker per ricevere i report direttamente nella propria casella di posta. Questa funzione si abilita tramite il file config.yaml o come argomento della riga di comando. Quando è abilitata, Upgrade Health Checker invia i report generati (HTML, Excel o JSON) a uno o più destinatari configurati tramite un server SMTP. Quando la funzione è disabilitata, non viene inviato alcun report. Se la generazione del report non riesce e l'email è abilitata, i file di log vengono inviati ai destinatari configurati.
+Upgrade Health Checker può inviare i report direttamente alla tua casella di posta. Abilita questa funzione tramite il file config.yaml o un argomento della riga di comando. Quando è abilitato, Upgrade Health Checker invia i report generati (HTML, Excel o JSON) a uno o più destinatari tramite un server SMTP. Quando è disabilitato, non viene inviato alcun report. Se la generazione del report non riesce e l'invio tramite email è abilitato, Upgrade Health Checker invia i file di log ai destinatari configurati.
 
 
 
+[[configure-using-the-config-yaml-file]]
 == Configura tramite il file config.yaml
+
+Puoi configurare le impostazioni email nel file config.yaml abilitando i report email, aggiungendo i dettagli del server SMTP e specificando gli indirizzi dei destinatari e i formati dei report.
 
 . Abilita i report via email nel file config.yaml.
 +
@@ -27,7 +30,7 @@ summary: È possibile configurare le email per ricevere i report di Upgrade Heal
 EMAIL:
   ENABLED: true
 ----
-. Fornire le impostazioni di configurazione SMTP, i dettagli del mittente e l'oggetto:
+. Aggiungi le impostazioni di configurazione SMTP, i dettagli del mittente e l'oggetto:
 +
 [listing]
 ----
@@ -41,7 +44,7 @@ EMAIL:
     HOST: "smtp.example.com"
     PORT: [<port-number>]
 ----
-. Fornire gli indirizzi e-mail dei destinatari e configurare i formati di report da inviare tramite e-mail, ad esempio HTML, EXCEL, JSON, ALL:
+. Aggiungi gli indirizzi email dei destinatari e imposta i formati dei report che il sistema invia via email, ad esempio HTML, EXCEL, JSON o ALL. Puoi anche usare l'autenticazione e la crittografia:
 +
 [listing]
 ----
@@ -57,12 +60,20 @@ EMAIL:
   SMTP:
     HOST: "smtp.example.com"
     PORT: [PORT]
+    USE_SMTP_AUTH: true
+    USE_TLS: true
+    USE_SSL: true
+    USERNAME: "user@example.com"
+    PASSWORD: "********"
 ----
 
 
 
 
+[[configure-using-command-line-arguments]]
 == Configura tramite argomenti della riga di comando
+
+Puoi configurare le impostazioni di base dell'email usando gli argomenti della riga di comando per abilitare i report, specificare i destinatari e scegliere i formati dei report.
 
 . Abilita i report via e-mail tramite argomenti della riga di comando:
 +
@@ -86,14 +97,14 @@ EMAIL:
 
 [NOTE]
 ====
-I seguenti tre attributi possono essere configurati sia tramite argomenti della riga di comando che tramite il file config.yaml; gli attributi rimanenti sono configurabili solo tramite il file config.yaml:
+Puoi configurare i seguenti tre attributi tramite argomenti della riga di comando o il file config.yaml. Puoi configurare tutti gli altri attributi solo nel file config.yaml:
 
 * E-mail abilitata
 * Destinatari dell'e-mail
 * Formati di report via e-mail
 
 
-Si noti che, laddove vengano forniti argomenti da riga di comando, questi sovrascrivono i valori del file config.yaml.
+Tieni presente che gli argomenti della riga di comando sovrascrivono i valori del file config.yaml.
 
 Ad esempio:
 
