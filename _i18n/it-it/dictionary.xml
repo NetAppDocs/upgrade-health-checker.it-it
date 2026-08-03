@@ -388,15 +388,15 @@
   <block id="3765a0a9e71fcf0695d585798c0f7818" category="paragraph">Tieni presente che gli argomenti della riga di comando sovrascrivono i valori del file config.yaml.</block>
   <block id="a6be72313a95cd7c51d73821a3ec4a39" category="section-title">17 luglio 2026</block>
   <block id="a1b9ebd6f0a705373bb04a1ef3e3e5a1" category="paragraph">Questo aggiornamento introduce diversi miglioramenti, tra cui una dashboard per la visualizzazione dei rischi della flotta, il supporto per l'autenticazione e la crittografia delle e-mail, la creazione di report sul numero di unità, il supporto per la versione di ONTAP consigliata e i controlli IMT per NAS e SAN.</block>
-  <block id="eb794a02fa8d9355140be4e8462e5f4f" category="list-text">Dashboard UHC: ora è disponibile la vista *Fleet Risk*</block>
-  <block id="69161900749195d35aba8ae3dd1b86e9" category="list-text">Integrazione con la posta elettronica: supporto per un server di posta elettronica con autenticazione e crittografia</block>
-  <block id="765efeade5c6287182e507f2e42e0c17" category="list-text">Aggiunto *Conteggio unità* nel riepilogo del cluster nel report</block>
-  <block id="b3c16c4644ccd43c0fa7a23462d7f33c" category="list-text">Versione di ONTAP consigliata ora supportata</block>
-  <block id="3d845cec7f7e3420d8ce5c903cf124e5" category="list-text">Aggiunto il supporto per i controlli IMT di NAS e SAN</block>
   <block id="8aab03955bf2c1214a6ad2ee0f63546a" category="paragraph">Questo aggiornamento aggiunge l'invio di report tramite e-mail, un parametro nella dashboard per una rapida panoramica dello stato di salute e nuove sezioni di documentazione per aiutarti a gestire e risolvere i problemi di Upgrade Health Checker.</block>
   <block id="7d9c60c63b935ef67858fee9c59b31ce" category="list-text">Mantieni Upgrade Health Checker controllando la presenza di aggiornamenti, monitorando i log per problemi ricorrenti e verificando di configurare correttamente lo strumento.</block>
   <block id="f59b071ecb8fe980b0730a8d2ba9bd0c" category="paragraph">Questo aggiornamento aggiunge un nuovo formato di report XLSX e richiede l'accesso a un nuovo endpoint affinché gli aggiornamenti automatici funzionino.</block>
   <block id="8a4e5ac1aa6e6074a0de130e95d9919d" category="list-text">Devi concedere a UHC l'accesso a un nuovo endpoint (+https://api.activeiq.netapp.com+) perché le funzionalità di aggiornamento automatico funzionino.</block>
   <block id="a272a47b723d2038be71ba15d270606e" category="paragraph">Upgrade Health Checker è ora disponibile. Questo strumento genera report dettagliati in loco per aiutarti a completare con successo l'aggiornamento di ONTAP. Puoi usare Upgrade Health Checker con i framework di automazione e orchestrazione esistenti per risparmiare tempo durante l'aggiornamento di cluster singoli o multipli. Upgrade Health Checker supporta gli aggiornamenti a ONTAP 9.11.1 e versioni successive.</block>
   <block id="742eb09495234f505b1ad9d7813d30e7" category="sidebar">Ricevi i report via email</block>
+  <block id="2e511792df0fe560a279011a4550ebaf" category="list-text">Fornisce supporto per un server di posta elettronica con autenticazione e crittografia.</block>
+  <block id="e6b6c01fe88f4c529278342034609f7c" category="list-text">Include una dashboard di visualizzazione del rischio della flotta che classifica il rischio dell'intera infrastruttura. Ora puoi vedere quali cluster bloccati presentano il rischio maggiore. Questo ti permette di dare priorità agli interventi di ripristino.</block>
+  <block id="856fc3b929c90b3c81bd17984abe77cd" category="list-text">Il report del cluster ora include il numero di unità, insieme alla versione di ONTAP, al numero di nodi e alla capacità. Questo completa lo snapshot hardware per la pianificazione degli upgrade e della capacità.</block>
+  <block id="eed66fd70ff3d1349ac990af700a5a10" category="list-text">La valutazione UHC ora include la versione di ONTAP consigliata come target di aggiornamento.</block>
+  <block id="70f1990f138a67936a4113eceb3a2154" category="list-text">Aggiunge il supporto per i controlli IMT di NAS e SAN.</block>
 </blocks>
