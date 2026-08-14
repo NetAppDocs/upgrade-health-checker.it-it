@@ -399,4 +399,6 @@
   <block id="856fc3b929c90b3c81bd17984abe77cd" category="list-text">Il report del cluster ora include il numero di unità, insieme alla versione di ONTAP, al numero di nodi e alla capacità. Questo completa lo snapshot hardware per la pianificazione degli upgrade e della capacità.</block>
   <block id="eed66fd70ff3d1349ac990af700a5a10" category="list-text">La valutazione UHC ora include la versione di ONTAP consigliata come target di aggiornamento.</block>
   <block id="70f1990f138a67936a4113eceb3a2154" category="list-text">Aggiunge il supporto per i controlli IMT di NAS e SAN.</block>
+  <block id="01b8b50c6af6a26d04385207f4b3c02e" category="section-title">13 agosto 2026</block>
+  <block id="03276a80a231fea1196fc4e6e3ab6682" category="paragraph">Questo aggiornamento migliora i controlli di interoperabilità per i cluster SAN e NAS ONTAP e risolve alcuni problemi esistenti.</block>
 </blocks>
