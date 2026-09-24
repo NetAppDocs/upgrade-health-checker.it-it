@@ -52,7 +52,7 @@ Configura una macchina virtuale per Upgrade Health Checker con le seguenti speci
 
  a| 
 *Requisiti di hosting*
-| Posiziona la macchina virtuale in una posizione con connettività al cluster e accesso a Internet per consentire gli aggiornamenti automatici degli strumenti. La macchina deve avere accesso ai seguenti endpoint tramite HTTPS (443) per eseguire gli aggiornamenti automatici e per consentire a NetApp di ricevere informazioni AutoSupport sui piani di aggiornamento: https://support.netapp.com/[] https://api.uhc.netapp.com[] https://gql.aiq.netapp.com[] https://api.activeiq.netapp.com[] 
+| Posiziona la VM in una posizione con connettività al cluster e accesso a Internet per consentire gli aggiornamenti automatici degli strumenti. La macchina deve avere accesso ai seguenti endpoint tramite HTTPS (443) per eseguire gli aggiornamenti automatici e per consentire a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento: https://support.netapp.com/ https://api.uhc.netapp.com https://gql.aiq.netapp.com https://api.activeiq.netapp.com 
 
 
  a| 
@@ -60,7 +60,7 @@ Configura una macchina virtuale per Upgrade Health Checker con le seguenti speci
 | Installare un server web per facilitare l'accesso 
 |===
 
-NOTE: Assicurati che la macchina virtuale possa connettersi agli endpoint di aggiornamento automatico e telemetria (https://support.netapp.com/[] e  https://api.activeiq.netapp.com[] tramite HTTPS (443) per consentire a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento. Se non hai accesso a Internet, devi scaricare manualmente la versione più recente di Upgrade Health Checker.
+NOTE: Assicurati che la macchina virtuale possa connettersi agli endpoint di aggiornamento automatico e telemetria (https://support.netapp.com/ e https://api.activeiq.netapp.com) tramite HTTPS (443) per permettere a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento. Se non hai accesso a Internet, devi scaricare manualmente la versione più recente di Upgrade Health Checker.
 
 .Passaggi
 . Scarica il file binario di Upgrade Health Checker accedendo alla link:https://console.netapp.com/automationHub["Hub di automazione NetApp Console"^] e trovando il riquadro Upgrade Health Checker.
