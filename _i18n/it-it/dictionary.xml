@@ -300,7 +300,6 @@
   <block id="f46e85a0de52240f550f9daab9d6086c" category="list-text">Destinatari dell'e-mail</block>
   <block id="ea263adf46b6d5e874d790afd83f0987" category="list-text">Formati di report via e-mail</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Ad esempio:</block>
-  <block id="1cc4274eac4a90919037379ad302ee24" category="summary">Risoluzione dei problemi dello strumento di verifica dello stato di avanzamento dell'aggiornamento: problemi comuni, errori e soluzioni per gli aggiornamenti di ONTAP.</block>
   <block id="33fc1d20f1d2e7e8d9ea39cc1c1e260b" category="doc">Risoluzione dei problemi Upgrade Health Checker</block>
   <block id="8bbf781921fc79273f7113760a28cdce" category="paragraph">Scopri come risolvere i problemi più comuni di Upgrade Health Checker e correggere gli errori che possono bloccare la pianificazione dell'aggiornamento di ONTAP.</block>
   <block id="7a4e5e5bc542eae2d10e3506f839f2ae" category="section-title">Risoluzione dei problemi</block>
@@ -402,4 +401,5 @@
   <block id="d37632fbc2f0f1b27ade5808d2dec434" category="doc">Note legali per Upgrade Health Checker</block>
   <block id="58ce19f9d14bbf36c99916598d07b7c7" category="cell">Posiziona la VM in una posizione con connettività al cluster e accesso a Internet per consentire gli aggiornamenti automatici degli strumenti. La macchina deve avere accesso ai seguenti endpoint tramite HTTPS (443) per eseguire gli aggiornamenti automatici e per consentire a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento: https://support.netapp.com/ https://api.uhc.netapp.com https://gql.aiq.netapp.com https://api.activeiq.netapp.com</block>
   <block id="f8dfac59d1fb625ac9d81d11aafbcd07" category="admonition">Assicurati che la macchina virtuale possa connettersi agli endpoint di aggiornamento automatico e telemetria (https://support.netapp.com/ e https://api.activeiq.netapp.com) tramite HTTPS (443) per permettere a NetApp di ricevere informazioni AutoSupport sui tuoi piani di aggiornamento. Se non hai accesso a Internet, devi scaricare manualmente la versione più recente di Upgrade Health Checker.</block>
+  <block id="7b109a0da4b947e1ef4b1af915317559" category="summary">Risolvi i problemi di Upgrade Health Checker esaminando problemi comuni, errori e soluzioni per gli aggiornamenti di ONTAP.</block>
 </blocks>
