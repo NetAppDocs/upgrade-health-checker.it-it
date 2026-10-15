@@ -17,6 +17,19 @@ Scopri le novità di Upgrade Health Checker (UHC). Puoi trovare ulteriori inform
 
 
 
+[[15-october-2026]]
+== 15 ottobre 2026
+
+Questo aggiornamento introduce diversi miglioramenti alla valutazione del rischio della versione di destinazione, ai dettagli del report, alla selezione della versione di ONTAP consigliata e ai suggerimenti relativi al firmware.
+
+* La valutazione UHC ora valuta i rischi di ONTAP rispetto alla versione di destinazione.
+* I report ora includono gli ID CVE, i punteggi CVSS e le versioni di correzione consigliate.
+* UHC ora supporta la selezione automatica della versione di ONTAP tramite il `--target-ontap-version=recommended` parametro o nel `config.yaml` file.
+* I report ora includono le versioni del firmware consigliate.
+
+
+
+
 [[13-august-2026]]
 == 13 agosto 2026
 
